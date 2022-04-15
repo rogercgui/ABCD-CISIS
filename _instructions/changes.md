@@ -21,7 +21,6 @@ Standard extended database size becomes 32 gigabytes.
 
 Bugfix regarding the conversion from mstxl to shift
 
-  
 bug de `/r/n`
 
 in the message: `GET HTTP`
@@ -46,15 +45,17 @@ inicio da modificacao dos fontes do aplicativo crunchif
 Adalberto acrescentou parametro (jdi) no mx. Alterados os fontes mxaot.c mxrun.c  
 e w2ov3.c (12/12/2008)
 
-InclusÆo no menu do mx:  
-jdi\[/\]==  
-/lines:1000/width:60  
-/tab:2/occ:30  
-/wmin:0.05/vmin:0.05/nmin:2  
-/sort:{w|v|n}{1|2|3}  
-/top:10  
-/55  
-/show
+InclusÆo no menu do mx:
+
+  
+`jdi[/]==`  
+`/lines:1000/width:60`  
+`/tab:2/occ:30`  
+`/wmin:0.05/vmin:0.05/nmin:2`  
+`/sort:{w|v|n}{1|2|3}`  
+`/top:10`  
+`/55`  
+`/show`
 
 ---
 
@@ -67,7 +68,6 @@ seq[/1m]=|
 xml[/1m]=|
 ```
 
-  
 para:
 
 ```
@@ -80,25 +80,20 @@ xml[/1m]=,|
 
 Alteracao do menu do mx de:
 
-  
 `Gload[/][/nonl][/xml][/socket][/head][={|}]`
 
-  
 para:  
 `Gload[/][/nonl][/xml][/socket][/head][={||dir=}]`
 
 Alteracao do menu do mx de:
 
-  
 `prolog|pft|epilog={|@} [lw={|0}]`
 
-  
 para:
 
-  
 `prolog|pft|epilog={|@} [lw={|0}] [pftout=]`
 
-Correcao da importacao de arquivo marc para isis e o processo inverso
+Correcao da importação de arquivo marc para isis e o processo inverso
 
 See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth0669.htm
 
