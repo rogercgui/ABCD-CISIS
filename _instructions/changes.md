@@ -70,7 +70,9 @@ para:
        
 Correcao da importacao de arquivo marc para isis e o processo inverso
 
-See http://www.itsmarc.com/crs/auth0669.htm 
+See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth0669.htm
+
+``` 
             bytes 00-04 - Logical record length
             byte  05    - Record status
             byte  06    - Type of record
@@ -82,6 +84,7 @@ See http://www.itsmarc.com/crs/auth0669.htm
             byte  17    - Encoding level
             bytes 18-19 - Undefined
             bytes 20-23 - Entry map   
+```
 
 Na importacao via mx, supondo o uso do parametro isotag1=4000, serao mostrados 
 os campos:
