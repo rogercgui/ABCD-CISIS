@@ -1,8 +1,8 @@
 ### 5.4.02
 
 1.  lw(0)
-2.  na proc R:nome,mfn onde : indica pathdo db de entrada
-3.  criacao dos diretorios lindG lingG4 ffiG ffiG4
+2.  na proc R: nome,mfn onde : indica pathdo db de entrada
+3.  criação dos diretórios lindG lingG4 ffiG ffiG4
 
 ```
 lindG : mstxl = 2G ... 512G
@@ -31,23 +31,27 @@ Adjusting CICONF2 build parameters of the mak as per AOT guidance.
 
 ### 5.4.pre06 - 01/10/2008
 
-alguns aplicativos exigiram alteracao do parametro CICONF2
+Alguns aplicativos exigiram alteração do parâmetro CICONF2
 
-alteracao da estrutura de diretorios de saida dos aplicativos para  
+Alteração da estrutura de diretórios de saída dos aplicativos para  
 \--- utl  
 \--- windows  
 \--- linux
 
 correcao de bug de formato (mfn) em windows
 
-inicio da modificacao dos fontes do aplicativo crunchif
+Inicio da modificação dos fontes do aplicativo crunchif
 
-Adalberto acrescentou parametro (jdi) no mx. Alterados os fontes mxaot.c mxrun.c  
-e w2ov3.c (12/12/2008)
+Adalberto acrescentou parâmetro (jdi) no mx. 
 
-InclusÆo no menu do mx:
+Alterados os fontes  (12/12/2008)
 
-  
+*   mxaot.c 
+*   mxrun.c
+*    w2ov3.c
+
+Inclusão no menu do mx:
+
 `jdi[/]==`  
 `/lines:1000/width:60`  
 `/tab:2/occ:30`  
@@ -61,7 +65,7 @@ InclusÆo no menu do mx:
 
 ### 5.4.pre07 - 12/03/2009
 
-Alteracao do menu do mx de:
+Alteração do menu do mx de:
 
 ```
 seq[/1m]=|
@@ -78,14 +82,14 @@ list={./|
 xml[/1m]=,|
 ```
 
-Alteracao do menu do mx de:
+Alteração do menu do mx de:
 
 `Gload[/][/nonl][/xml][/socket][/head][={|}]`
 
 para:  
 `Gload[/][/nonl][/xml][/socket][/head][={||dir=}]`
 
-Alteracao do menu do mx de:
+Alteração do menu do mx de:
 
 `prolog|pft|epilog={|@} [lw={|0}]`
 
@@ -93,7 +97,7 @@ para:
 
 `prolog|pft|epilog={|@} [lw={|0}] [pftout=]`
 
-Correcao da importação de arquivo marc para isis e o processo inverso
+Correção da importação de arquivo marc para isis e o processo inverso
 
 See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth0669.htm
 
@@ -111,8 +115,7 @@ See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth06
             bytes 20-23 - Entry map   
 ```
 
-Na importacao via mx, supondo o uso do parametro isotag1=4000, serao mostrados  
-os campos:
+Na importação via mx, supondo o uso do parâmetro isotag1=4000, serão mostrados os campos:
 
 ```
 4005 - Record status
@@ -120,16 +123,21 @@ os campos:
 4017 - Encoding level
 ```
 
-Na exportacao via mx, todos os parametros do lider serao os padroes da norma,  
-mas caso se deseje altera-los deve-se criar os campos seguintes com o parametro  
-outisotag1. Supondo o uso do parametro outisotag1=4000 normalmente devem existir  
-no registro os campos: Record status, Character coding scheme e Encoding level,  
-sendo que os dois ultimos raramente serao alterados do valor padrao.
+Na exportação via mx, todos os parâmetros do líder serão os padrões da norma, mas caso se deseje alterá-los deve-se criar os campos seguintes com o parâmetro  
+outisotag1. Supondo o uso do parâmetro outisotag1=4000 normalmente devem existir no registro os campos: 
 
-Um exemplo onde se importa e exporta um arquivo em formato marc via mx pode ser  
-visto abaixo:
+*   Record status, 
+*   Character coding scheme 
+*   Encoding level,  
+     
 
-5.4.pre07
+sendo que os dois últimos raramente serão alterados do valor padrão.
+
+Um exemplo onde se importa e exporta um arquivo em formato marc via mx pode ser visto abaixo:
+
+---
+
+### 5.4.pre07
 
 ```
 /utl/linux/isis/mx iso=marc=marc08.sample.bin isotag1=4000
@@ -142,7 +150,9 @@ Onde: `diff marc08.sample.bin x.iso` deve ser vazio.
 
 ### 5.4.pre08 - 12/03/2009
 
-Alteracao no arquivo ciupd.c. Onde estava:
+Alteração no arquivo _ciupd.c_. 
+
+Onde estava:
 
 ```
 #define PROCG 1
@@ -168,9 +178,9 @@ Geracao a pedido do Marcelo do aplicativo genqlf
 
 ### 5.5.pre02 - 14/10/2009
 
-Correcao de bug na indexacao com a versao lindG4 - INFX - (ciifl.c ciifl.h ciiflh.c)  
-Aumento de area de buffer (REPLYSIZE) em serw.c  
-Correcao do bug do parametro what no mx
+Correção de bug na indexação com a versão lindG4 - INFX - (ciifl.c ciifl.h ciiflh.c)  
+Aumento de área de buffer (REPLYSIZE) em _serw.c_  
+Correção do bug do parâmetro _what_ no _mx_
 
 ---
 
@@ -182,53 +192,45 @@ Correção do bug do jdi em mxaot.c
 
 ### 5.53 - 24/05/2010
 
-Correcao do bug do jdi em mxaot.c (verificacao se pesos no registro utilizado  
-pelo parametro jdi= no mx estao ordenados)  
+Correção do bug do jdi em mxaot.c (verificacao se pesos no registro utilizado pelo parametro jdi= no mx estão ordenados)  
 Correcao do bug da funcao Gmarx em ciupdmarx.c
 
 ---
 
 ### 5.6 - 08/11/2010
 
-Correcao do bug de nao se gerar master com mstxl=6 na versao FFIG4  
-Alteracao do codigo para compilacao em maquinas 64 bits (parametros de sscanf)  
-e do script de geracao para as versoes 32 e 64 bits.  
-Geracao das versoes lind512G4 e ffi512G4.
+Correção do bug de não se gerar master com `mstxl=6` na versao FFIG4  
+Alteração do código para compilação em máquinas 64 bits (parâmetros de sscanf) e do script de geração para as versões 32 e 64 bits.  
+Geração das versões lind512G4 e ffi512G4.
 
 ---
 
 ### 5.7a - 17/08/2011
 
-Alteracao nos fontes dos aplicativos wtrig1 e wtrig2.  
-So define PACKED2 se for GCC  
-Criacao das categorias FFI1660 e isisG4 de aplicativos
+Alteração nos fontes dos aplicativos wtrig1 e wtrig2.  
+Só define PACKED2 se for GCC  
+Criação das categorias FFI1660 e isisG4 de aplicativos
 
 ---
 
 ### 5.7b - 07/05/2012
 
-wxis - mudanca da versao de 7.1e para 7.1f - alteracao do tamanho de buffer nas  
-versoes nao FFI para permitir a indexacao de registros com 32 kbytes.  
-Criacao do sabor ffiG\_1024K-256 (nome temporario) com tamanho maxim padrao de  
-registro de 1giga, tamanho de master ate 64gigas, chaves ate 256 caracteres.  
-Apresentacao do aviso de 64bits no bunner de todos os aplicativos.  
-Alteracao da url dos aplicativos no copyright dos aplicativos.  
-Alteracao do tipo de LONGX para time\_t nos parametros das funcoes time() e localtime().  
-Alteracao da permissao de escrita dos arquivos mst e xrf passando de 644 para 664  
-(pessoas do grupo passam a poder alterar os mesmos).  
-Criacao do sabor ffiG4\_4 que e o mesmo do ffiG4 mas com registros com tamanho maximo padrao  
-de 4 gigabytes.
+*   wxis - mudança da versão de 7.1e para 7.1f - alteração do tamanho de buffer nas versoes nao FFI para permitir a indexacao de registros com 32 kbytes.
+*   Criação do sabor ffiG\_1024K-256 (nome temporário) com tamanho máximo padrão de registro de 1GB, tamanho de master ate 64GB, chaves ate 256 caracteres.
+*   Apresentação do aviso de 64bits no bunner de todos os aplicativos.
+*   Alteração da url dos aplicativos no copyright dos aplicativos.
+*   Alteração do tipo de LONGX para time\_t nos parametros das funcoes time() e localtime().
+*   Alteração da permissão de escrita dos arquivos mst e xrf passando de 644 para 664 (pessoas do grupo passam a poder alterar os mesmos).
+*   Criação do sabor ffiG4\_4 que e o mesmo do ffiG4 mas com registros com tamanho máximo padrão de 4 gigabytes.
 
 ---
 
 ### 5.7c - 18/06/2012
 
-Buf corrido na funcao fmt\_load\_next\_occ onde na versao 64 bits a funcao strcpy  
-apresentava comportamento diferente da versao 32 bits.
+Buffer corrigido na função fmt\_load\_next\_occ onde na versão 64 bits a funcão strcpy apresentava comportamento diferente da versão 32 bits.
 
 ---
 
 ### 5.7d - 14/02/2013
 
-Inseridas as modificacoes dos fontes feitas pelo Ricardo Piva para a inclusao  
-do processamento de registros em formato UTF-8.
+Inseridas as modificações dos fontes feitas pelo Ricardo Piva para a inclusão do processamento de registros em formato UTF-8.
