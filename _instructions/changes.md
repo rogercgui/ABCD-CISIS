@@ -191,8 +191,8 @@ Correção do bug do jdi em mxaot.c
 
 ### 5.53 - 24/05/2010
 
-Correção do bug do jdi em mxaot.c (verificacao se pesos no registro utilizado pelo parametro jdi= no mx estão ordenados)  
-Correcao do bug da funcao Gmarx em ciupdmarx.c
+Correção do bug do jdi em mxaot.c (verificação se pesos no registro utilizado pelo parâmetro jdi= no mx estão ordenados)  
+Correção do bug da função _Gmarx_ em _ciupdmarx.c_
 
 ---
 
@@ -214,19 +214,19 @@ Criação das categorias FFI1660 e isisG4 de aplicativos
 
 ### 5.7b - 07/05/2012
 
-*   wxis - mudança da versão de 7.1e para 7.1f - alteração do tamanho de buffer nas versoes nao FFI para permitir a indexacao de registros com 32 kbytes.
+*   wxis - mudança da versão de 7.1e para 7.1f - alteração do tamanho de buffer nas versões nao FFI para permitir a indexação de registros com 32 kbytes.
 *   Criação do sabor ffiG\_1024K-256 (nome temporário) com tamanho máximo padrão de registro de 1GB, tamanho de master ate 64GB, chaves ate 256 caracteres.
 *   Apresentação do aviso de 64bits no bunner de todos os aplicativos.
 *   Alteração da url dos aplicativos no copyright dos aplicativos.
-*   Alteração do tipo de LONGX para time\_t nos parametros das funcoes time() e localtime().
-*   Alteração da permissão de escrita dos arquivos mst e xrf passando de 644 para 664 (pessoas do grupo passam a poder alterar os mesmos).
+*   Alteração do tipo de LONGX para _time\_t_ nos parâmetros das funções time() e localtime().
+*   Alteração da permissão de escrita dos arquivos **mst** e **xrf** passando de 644 para 664 (pessoas do grupo passam a poder alterar os mesmos).
 *   Criação do sabor ffiG4\_4 que e o mesmo do ffiG4 mas com registros com tamanho máximo padrão de 4 gigabytes.
 
 ---
 
 ### 5.7c - 18/06/2012
 
-Buffer corrigido na função fmt\_load\_next\_occ onde na versão 64 bits a funcão strcpy apresentava comportamento diferente da versão 32 bits.
+Bug corrigido na função _fmt\_load\_next\_occ_ onde na versão 64 bits a função strcpy apresentava comportamento diferente da versão 32 bits.
 
 ---
 
@@ -235,10 +235,12 @@ Buffer corrigido na função fmt\_load\_next\_occ onde na versão 64 bits a func
 Inseridas as modificações dos fontes feitas pelo Ricardo Piva para a inclusão do processamento de registros em formato UTF-8.
 
 ---
+
 ### 5.7e - xx/xx/2014
 
 ---
+
 ### 5.7f - 13/01/2015
 
-Bug corrigido na funcao recgizmo. Antes o comprimento maximo do registro tinha que
-ser de 6 digitos, agora passou a 8 digitos. 'H<tag> 00000000 <campo>'
+Bug corrigido na função _recgizmo_. Antes o comprimento máximo do registro tinha que ser de 6 dígitos, agora passou a 8 dígitos.  
+`'H 00000000 '`
