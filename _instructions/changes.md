@@ -124,12 +124,11 @@ Na importação via mx, supondo o uso do parâmetro isotag1=4000, serão mostrad
 ```
 
 Na exportação via mx, todos os parâmetros do líder serão os padrões da norma, mas caso se deseje alterá-los deve-se criar os campos seguintes com o parâmetro  
-outisotag1. Supondo o uso do parâmetro outisotag1=4000 normalmente devem existir no registro os campos: 
+outisotag1. Supondo o uso do parâmetro outisotag1=4000 normalmente devem existir no registro os campos:
 
 *   Record status, 
 *   Character coding scheme 
-*   Encoding level,  
-     
+*   Encoding level,  
 
 sendo que os dois últimos raramente serão alterados do valor padrão.
 
@@ -234,3 +233,12 @@ Buffer corrigido na função fmt\_load\_next\_occ onde na versão 64 bits a func
 ### 5.7d - 14/02/2013
 
 Inseridas as modificações dos fontes feitas pelo Ricardo Piva para a inclusão do processamento de registros em formato UTF-8.
+
+---
+### 5.7e - xx/xx/2014
+
+---
+### 5.7f - 13/01/2015
+
+Bug corrigido na funcao recgizmo. Antes o comprimento maximo do registro tinha que
+ser de 6 digitos, agora passou a 8 digitos. 'H<tag> 00000000 <campo>'
