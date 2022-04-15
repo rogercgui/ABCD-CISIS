@@ -1,78 +1,108 @@
-5.4.02
+### 5.4.02
 
-1) lw(0)
-2) na proc R:nome,mfn  onde : indica pathdo db de entrada
-3) criacao dos diretorios lindG lingG4 ffiG ffiG4
+1.  lw(0)
+2.  na proc R:nome,mfn onde : indica pathdo db de entrada
+3.  criacao dos diretorios lindG lingG4 ffiG ffiG4
 
-lindG :  mstxl = 2G ... 512G
-lingG4:  mstxl = 2G ... 512G ate' 256 * 16 M mfns 0xFFFFFFFF
+```
+lindG : mstxl = 2G ... 512G
+lingG4: mstxl = 2G ... 512G ate' 256 * 16 M mfns 0xFFFFFFFF
+```
 
-________________________________________________________________________________
-5.4.pre04 - 20/08/2008
+---
 
-tamanho padrao da base de dados extendida passa a ser de 32 gigabytes
+### 5.4.pre04 - 20/08/2008
 
-________________________________________________________________________________
+Standard extended database size becomes 32 gigabytes.
+
+---
+
 5.4.pre05 - 12/09/2008
 
-correcao de bug referente a conversao de mstxl para shift
-            bug de /r/n na mensagem GET HTTP
+Bugfix regarding the conversion from mstxl to shift
 
-ajuste dos parametros de compilacao CICONF2 do mak conforme orientacao de AOT 
+  
+bug de `/r/n`
 
-________________________________________________________________________________
-5.4.pre06 - 01/10/2008
+in the message: `GET HTTP`
+
+Adjusting CICONF2 build parameters of the mak as per AOT guidance.
+
+---
+
+### 5.4.pre06 - 01/10/2008
 
 alguns aplicativos exigiram alteracao do parametro CICONF2
 
-alteracao da estrutura de diretorios de saida dos aplicativos para
-                                            --- utl
-                                                --- windows
-                                                --- linux
-                                                
+alteracao da estrutura de diretorios de saida dos aplicativos para  
+\--- utl  
+\--- windows  
+\--- linux
+
 correcao de bug de formato (mfn) em windows
 
 inicio da modificacao dos fontes do aplicativo crunchif
 
-Adalberto acrescentou parametro (jdi) no mx. Alterados os fontes mxaot.c mxrun.c
+Adalberto acrescentou parametro (jdi) no mx. Alterados os fontes mxaot.c mxrun.c  
 e w2ov3.c (12/12/2008)
 
-Inclus∆o no menu do mx:
-jdi[/<options>]=<db>=<jdi_fmt>
-       /lines:1000/width:60
-       /tab:2/occ:30
-       /wmin:0.05/vmin:0.05/nmin:2
-       /sort:{w|v|n}{1|2|3}
-       /top:10
-       /55
-       /show
+Inclus√Üo no menu do mx:  
+jdi\[/\]==  
+/lines:1000/width:60  
+/tab:2/occ:30  
+/wmin:0.05/vmin:0.05/nmin:2  
+/sort:{w|v|n}{1|2|3}  
+/top:10  
+/55  
+/show
 
-________________________________________________________________________________
-5.4.pre07 - 12/03/2009
+---
+
+### 5.4.pre07 - 12/03/2009
 
 Alteracao do menu do mx de:
-   seq[/1m]=<file>|
-   xml[/1m]=<file>|
+
+```
+seq[/1m]=|
+xml[/1m]=|
+```
+
+  
 para:
-   seq[/1m]=<file>[<fldDelim>]|
-   list={./|<dir>}|
-   xml[/1m]=<file>,<element>|
-   
+
+```
+
+seq[/1m]=[]|
+list={./|
+}|
+xml[/1m]=,|
+```
+
 Alteracao do menu do mx de:
-   Gload[/<tag>][/nonl][/xml][/socket][/head][={<url>|<file>}]
+
+  
+`Gload[/][/nonl][/xml][/socket][/head][={|}]`
+
+  
+para:  
+`Gload[/][/nonl][/xml][/socket][/head][={||dir=}]`
+
+Alteracao do menu do mx de:
+
+  
+`prolog|pft|epilog={|@} [lw={|0}]`
+
+  
 para:
-   Gload[/<tag>][/nonl][/xml][/socket][/head][={<url>|<file>|dir=<dir>}]
-   
-Alteracao do menu do mx de:   
-   prolog|pft|epilog={<diplay_fmt>|@<file>}   [lw={<n>|0}]
-para:
-   prolog|pft|epilog={<diplay_fmt>|@<file>}   [lw={<n>|0}] [pftout=<file>]
-       
+
+  
+`prolog|pft|epilog={|@} [lw={|0}] [pftout=]`
+
 Correcao da importacao de arquivo marc para isis e o processo inverso
 
 See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth0669.htm
 
-``` 
+```
             bytes 00-04 - Logical record length
             byte  05    - Record status
             byte  06    - Type of record
@@ -86,105 +116,124 @@ See https://web.archive.org/web/20100212050244/http://www.itsmarc.com/crs/auth06
             bytes 20-23 - Entry map   
 ```
 
-Na importacao via mx, supondo o uso do parametro isotag1=4000, serao mostrados 
+Na importacao via mx, supondo o uso do parametro isotag1=4000, serao mostrados  
 os campos:
 
+```
 4005 - Record status
 4009 - Character coding scheme
 4017 - Encoding level
+```
 
-Na exportacao via mx, todos os parametros do lider serao os padroes da norma,
-mas caso se deseje altera-los deve-se criar os campos seguintes com o parametro
-outisotag1. Supondo o uso do parametro outisotag1=4000 normalmente devem existir
-no registro os campos: Record status, Character coding scheme e Encoding level,
+Na exportacao via mx, todos os parametros do lider serao os padroes da norma,  
+mas caso se deseje altera-los deve-se criar os campos seguintes com o parametro  
+outisotag1. Supondo o uso do parametro outisotag1=4000 normalmente devem existir  
+no registro os campos: Record status, Character coding scheme e Encoding level,  
 sendo que os dois ultimos raramente serao alterados do valor padrao.
 
-Um exemplo onde se importa e exporta um arquivo em formato marc via mx pode ser 
+Um exemplo onde se importa e exporta um arquivo em formato marc via mx pode ser  
 visto abaixo:
 
-5.4.pre07/utl/linux/isis/mx iso=marc=marc08.sample.bin isotag1=4000 
-                                     outiso=marc=x.iso outisotag1=4000 now -all
+5.4.pre07
 
-Onde: diff marc08.sample.bin x.iso deve ser vazio.
+```
+/utl/linux/isis/mx iso=marc=marc08.sample.bin isotag1=4000
+outiso=marc=x.iso outisotag1=4000 now -all
+```
 
-________________________________________________________________________________
-5.4.pre08 - 12/03/2009
+Onde: `diff marc08.sample.bin x.iso` deve ser vazio.
+
+---
+
+### 5.4.pre08 - 12/03/2009
 
 Alteracao no arquivo ciupd.c. Onde estava:
 
-#define PROCG  1
+```
+#define PROCG 1
 #if PROCG
 #include "ciupg.c"
 #endif /* PROCG */
+```
 
 ficou:
 
+```
 #ifndef PROCG
-#define PROCG  1
-#endif /* PROCG */
+#define PROCG 1
+#endif /* PROCG /
 #if PROCG
 #include "ciupg.c"
-#endif /* PROCG */
+#endif / PROCG */
+```
 
 Geracao a pedido do Marcelo do aplicativo genqlf
 
-________________________________________________________________________________
-5.5.pre02 - 14/10/2009
+---
 
-Correcao de bug na indexacao com a versao lindG4 - INFX - (ciifl.c ciifl.h ciiflh.c)
-Aumento de area de buffer (REPLYSIZE) em serw.c
+### 5.5.pre02 - 14/10/2009
+
+Correcao de bug na indexacao com a versao lindG4 - INFX - (ciifl.c ciifl.h ciiflh.c)  
+Aumento de area de buffer (REPLYSIZE) em serw.c  
 Correcao do bug do parametro what no mx
 
-________________________________________________________________________________
-5.52 - 19/04/2010
+---
 
-CorreÁ„o do bug do jdi em mxaot.c
+### 5.52 - 19/04/2010
 
-________________________________________________________________________________
-5.53 - 24/05/2010
+Corre√ß√£o do bug do jdi em mxaot.c
 
-Correcao do bug do jdi em mxaot.c (verificacao se pesos no registro utilizado
-pelo parametro jdi= no mx estao ordenados)
+---
+
+### 5.53 - 24/05/2010
+
+Correcao do bug do jdi em mxaot.c (verificacao se pesos no registro utilizado  
+pelo parametro jdi= no mx estao ordenados)  
 Correcao do bug da funcao Gmarx em ciupdmarx.c
 
-________________________________________________________________________________
-5.6 - 08/11/2010
+---
 
-Correcao do bug de nao se gerar master com mstxl=6 na versao FFIG4
-Alteracao do codigo para compilacao em maquinas 64 bits (parametros de sscanf)
-e do script de geracao para as versoes 32 e 64 bits.
+### 5.6 - 08/11/2010
+
+Correcao do bug de nao se gerar master com mstxl=6 na versao FFIG4  
+Alteracao do codigo para compilacao em maquinas 64 bits (parametros de sscanf)  
+e do script de geracao para as versoes 32 e 64 bits.  
 Geracao das versoes lind512G4 e ffi512G4.
 
-________________________________________________________________________________
-5.7a - 17/08/2011
+---
 
-Alteracao nos fontes dos aplicativos  wtrig1 e wtrig2.
-So define PACKED2 se for GCC
+### 5.7a - 17/08/2011
+
+Alteracao nos fontes dos aplicativos wtrig1 e wtrig2.  
+So define PACKED2 se for GCC  
 Criacao das categorias FFI1660 e isisG4 de aplicativos
 
-________________________________________________________________________________
-5.7b - 07/05/2012
+---
 
-wxis - mudanca da versao de 7.1e para 7.1f - alteracao do tamanho de buffer nas
-versoes nao FFI para permitir a indexacao de registros com 32 kbytes.
-Criacao do sabor ffiG_1024K-256 (nome temporario) com tamanho maxim padrao de 
-registro de 1giga, tamanho de master ate 64gigas, chaves ate 256 caracteres.
-Apresentacao do aviso de 64bits no bunner de todos os aplicativos.
-Alteracao da url dos aplicativos no copyright dos aplicativos.
-Alteracao do tipo de LONGX para time_t nos parametros das funcoes time() e localtime().
-Alteracao da permissao de escrita dos arquivos mst e xrf passando de 644 para 664 
-(pessoas do grupo passam a poder alterar os mesmos).
-Criacao do sabor ffiG4_4 que e o mesmo do ffiG4 mas com registros com tamanho maximo padrao
+### 5.7b - 07/05/2012
+
+wxis - mudanca da versao de 7.1e para 7.1f - alteracao do tamanho de buffer nas  
+versoes nao FFI para permitir a indexacao de registros com 32 kbytes.  
+Criacao do sabor ffiG\_1024K-256 (nome temporario) com tamanho maxim padrao de  
+registro de 1giga, tamanho de master ate 64gigas, chaves ate 256 caracteres.  
+Apresentacao do aviso de 64bits no bunner de todos os aplicativos.  
+Alteracao da url dos aplicativos no copyright dos aplicativos.  
+Alteracao do tipo de LONGX para time\_t nos parametros das funcoes time() e localtime().  
+Alteracao da permissao de escrita dos arquivos mst e xrf passando de 644 para 664  
+(pessoas do grupo passam a poder alterar os mesmos).  
+Criacao do sabor ffiG4\_4 que e o mesmo do ffiG4 mas com registros com tamanho maximo padrao  
 de 4 gigabytes.
 
-________________________________________________________________________________
-5.7c - 18/06/2012
+---
 
-Buf corrido na funcao fmt_load_next_occ onde na versao 64 bits a funcao strcpy
+### 5.7c - 18/06/2012
+
+Buf corrido na funcao fmt\_load\_next\_occ onde na versao 64 bits a funcao strcpy  
 apresentava comportamento diferente da versao 32 bits.
 
-________________________________________________________________________________
-5.7d - 14/02/2013
+---
 
-Inseridas as modificacoes dos fontes feitas pelo Ricardo Piva para a inclusao
+### 5.7d - 14/02/2013
+
+Inseridas as modificacoes dos fontes feitas pelo Ricardo Piva para a inclusao  
 do processamento de registros em formato UTF-8.
