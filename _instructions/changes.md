@@ -244,3 +244,12 @@ Inseridas as modificações dos fontes feitas pelo Ricardo Piva para a inclusão
 
 Bug corrigido na função _recgizmo_. Antes o comprimento máximo do registro tinha que ser de 6 dígitos, agora passou a 8 dígitos.  
 `'H 00000000 '`
+
+---
+### 5.7f - ABCD      UTF-8 FFI 
+
+O tamanho do registro de UTF-8 FFI usado pelos executáveis do Windows é pequeno
+O tamanho do registro de UTF-8 FFI não é o tamanho esperado de 1Mb
+Muitos executáveis de suporte (crunchmf, retag,...) estão faltando para UTF-8 FFI
+
+Exclusão de cgi-bin/utf8/ffi
