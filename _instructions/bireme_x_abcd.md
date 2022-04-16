@@ -69,18 +69,45 @@ Some files were modified by Bireme after the changes for modifications to ABCD.
 
 ## msrt.c
 
-Line 224  
-_cisis Bireme:_  
+### Line 224
+
+  
+_**cisis Bireme:**_  
 `seek = (((off_t)(wcomb-1))<<MSBSHIFT);`
 
-_cisis UTF8_  
+  
+_**cisis UTF8:**_  
+`seek = (off_t)((wcomb-1)<<MSBSHIFT);`
+
+### Line 224
+
+_**cisis Bireme:**_  
+`seek = (((off_t)(wcomb-1))<<MSBSHIFT);`
+
+_**cisis UTF8**_  
 `seek = (off_t)((wcomb-1)<<MSBSHIFT);`
 
 ---
 
 ## cigiz.c
 
-Line 631
+### Line 563
+
+_cisis Bireme_
+
+```
+    sprintf((char *)batchp,"H%u 00000000 ",tag); batchp+=strlen((CONST char *)batchp);
+    fuplenp=batchp-1-8; fuplen=0; /* fuplenp points to 00000000 */
+```
+
+_cisis UTF8_
+
+```
+    sprintf((char *)batchp,"H%u 000000 ",tag); batchp+=strlen((CONST char *)batchp);
+    fuplenp=batchp-1-6; fuplen=0; /* fuplenp points to 000000 */
+```
+
+### Line 631
 
 _cisis Bireme:_  
 `sprintf((char *)fuplenp,"%08d",fuplen); *(fuplenp+8)=' ';`
